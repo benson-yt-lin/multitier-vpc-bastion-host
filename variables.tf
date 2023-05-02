@@ -12,7 +12,6 @@ variable "ibm_region" {
 
 variable "ibmcloud_api_key" {
   description = "IBM Cloud API key when run standalone"
-  default = "J_rbEQatAo1KAYZlK2_IbDZuGh091NNO_6i1_b2xYhwZ"
 }
 
 
