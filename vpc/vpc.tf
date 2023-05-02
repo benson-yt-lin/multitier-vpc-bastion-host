@@ -79,6 +79,8 @@ resource "ibm_is_subnet" "frontend_subnet" {
   #network_acl     = "${ibm_is_network_acl.multizone_acl.id}"
   public_gateway = ibm_is_public_gateway.repo_gateway[count.index].id
   depends_on     = [ibm_is_vpc_address_prefix.frontend_subnet_prefix]
+  resource_group = data.ibm_resource_group.all_rg.id
+
 }
 
 # Increase count to create subnets in all zones
@@ -91,6 +93,7 @@ resource "ibm_is_subnet" "backend_subnet" {
   #network_acl     = "${ibm_is_network_acl.multizone_acl.id}"
   public_gateway = ibm_is_public_gateway.repo_gateway[count.index].id
   depends_on     = [ibm_is_vpc_address_prefix.backend_subnet_prefix]
+  resource_group = data.ibm_resource_group.all_rg.id
 }
 
 
@@ -103,6 +106,7 @@ resource "ibm_is_public_gateway" "repo_gateway" {
   name  = "${var.unique_id}-public-gtw-${count.index}"
   vpc   = ibm_is_vpc.vpc.id
   zone  = "${var.ibm_region}-${count.index % 3 + 1}"
+  resource_group = data.ibm_resource_group.all_rg.id
 
   //User can configure timeouts
   timeouts {

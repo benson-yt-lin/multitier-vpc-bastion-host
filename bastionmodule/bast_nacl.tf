@@ -78,7 +78,7 @@ locals {
 resource "random_string" "uuid" {
   count   = length(local.rules)
   special = false
-  number  = false
+  numeric  = false
   lower   = true
   upper   = false
   length  = 8
