@@ -39,7 +39,7 @@ variable "ssh_key_id" {
 # 
 variable "ibm_region" {
   description = "IBM Cloud region where all resources will be deployed"
-  default     = "us-south"
+  default     = "jp-tok"
 }
 
 # variable "az_list" {

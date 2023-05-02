@@ -5,20 +5,21 @@
 # target region
 variable "ibm_region" {
   description = "IBM Cloud region where all resources will be deployed"
-  default     = "us-south"
+  default     = "jp-tok"
   # default     = "us-east"
   # default     = "eu-gb"
 }
 
-# variable "ibmcloud_api_key" {
-#   description = "IBM Cloud API key when run standalone"
-# }
+variable "ibmcloud_api_key" {
+  description = "IBM Cloud API key when run standalone"
+  default = "J_rbEQatAo1KAYZlK2_IbDZuGh091NNO_6i1_b2xYhwZ"
+}
 
 
 
 variable "resource_group_name" {
   description = "Name of IBM Cloud Resource Group used for all VPC resources"
-  default     = "Default"
+  default     = "poc"
 }
 
 # unique name for the VPC in the account 

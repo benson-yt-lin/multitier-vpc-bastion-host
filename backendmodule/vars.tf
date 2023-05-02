@@ -11,7 +11,7 @@ variable "ibm_is_resource_group_id" {
 
 variable "ibm_region" {
   description = "IBM Cloud region where all resources will be deployed"
-  default     = "us-south"
+  default     = "jp-tok"
 }
 
 # VSI compute profile for webserver host
